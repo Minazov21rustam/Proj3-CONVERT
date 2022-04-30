@@ -1,6 +1,5 @@
 export default class View {
   constructor() {
-    // this.root = document.getElementById("root");
     this.onLeftCurrencyChange = () => {};
     this.onRigthCurrencyChange = () => {};
     this.leftInp = document.getElementById("leftCurInp");
@@ -10,7 +9,6 @@ export default class View {
   }
 
   init() {
-    // const allRadio = document.querySelectorAll('input')
     const radio1 = document.querySelector("#radio-1");
     radio1.addEventListener("click", (e) => {
       e.preventDefault();
@@ -33,7 +31,6 @@ export default class View {
       this.onLeftCurrencyChange("GBP");
     });
     // <===================================Right==================================>
-
     const radio5 = document.querySelector("#radio-5");
     radio5.addEventListener("click", (e) => {
       e.preventDefault();

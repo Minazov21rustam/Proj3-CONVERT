@@ -29,11 +29,10 @@ export default class Controller {
   }
   setLeftInp() {
     this.view.leftInp.value = this.model.rightValue * this.model.coefficient;
-    console.log(this.view.leftInp.value, this.model.rightValue, this.model.coefficient);
+    // console.log(this.view.leftInp.value, this.model.rightValue, this.model.coefficient);
   }
 
   onLeftCurrencyChange = async (currency) => {
-    // console.log(currency);
     this.model.setLeftCurrency(currency);
     await this.getAndSetCurrency();
     this.setRightInp();
@@ -58,16 +57,15 @@ export default class Controller {
       `https://api.exchangerate.host/latest?base=${base}&symbols=${symbols}`
     );
     const data = await response.json();
-    // console.log(base, symbols);
     return data;
   };
+  
   getAndSetCurrency = async () => {
     const data = await this.fetchCurency(
       this.model.leftCurrency,
       this.model.rightCurrency
     );
     this.model.setCoefficent(data.rates[this.model.rightCurrency]);
-    // console.log(data.rates[this.model.rightCurrency]);
   };
 
   writeLeftCurency() {

@@ -115,7 +115,9 @@ img {
 .login-btn:hover {
   background-color: #833ae0;
 }
-
+.h1-content{
+  width: 66%;
+}
 .content-text {
   height: 32px;
   width: 100%;
