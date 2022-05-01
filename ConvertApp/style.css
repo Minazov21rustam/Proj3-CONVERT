@@ -115,7 +115,8 @@ img {
 .login-btn:hover {
   background-color: #833ae0;
 }
-.h1-content{
+
+.h1-content {
   width: 66%;
 }
 .content-text {
@@ -131,19 +132,16 @@ img {
 
 .left-form_radio_group {
   display: flex;
-  /* overflow: hidden; */
   height: 30px;
   width: 259px;
   border-radius: 3px;
   color: #c6c6c6;
 }
-/* .left-form_radio_group-item {
-  display: flex;
-  float: left;
-} */
+
 .left-form_radio_group input[type="radio"] {
   display: none;
 }
+
 .left-form_radio_group label {
   display: inline-block;
   cursor: pointer;
@@ -151,7 +149,6 @@ img {
   line-height: 34px;
   border: 1px solid #999;
   border-right: none;
-  /* user-select: none; */
 }
 
 .left-form_radio_group .left-form_radio_group-item:first-child label {
@@ -162,32 +159,27 @@ img {
   border-right: 1px solid #999;
 }
 
-/* Checked */
 .left-form_radio_group input[type="radio"]:checked + label {
   background: #833ae0;
   color: #ffffff;
 }
 
-/* Hover */
 .left-form_radio_group label:hover {
   color: #666;
 }
 
 .right-form_radio_group {
   display: flex;
-  /* overflow: hidden; */
   height: 30px;
   width: 259px;
   border-radius: 3px;
   color: #c6c6c6;
 }
-/* .right-form_radio_group-item {
-  display: flex;
-  float: left;
-} */
+
 .right-form_radio_group input[type="radio"] {
   display: none;
 }
+
 .right-form_radio_group label {
   display: inline-block;
   cursor: pointer;
@@ -201,6 +193,7 @@ img {
 .right-form_radio_group .right-form_radio_group-item:first-child label {
   border-radius: 6px 0 0 6px;
 }
+
 .right-form_radio_group .right-form_radio_group-item:last-child label {
   border-radius: 0 6px 6px 0;
   border-right: 1px solid #999;
@@ -250,6 +243,7 @@ img {
   margin-top: 33px;
   margin-left: 250px;
 }
+
 .right-side {
   margin-top: 33px;
   margin-right: 250px;
@@ -259,8 +253,9 @@ img {
   display: flex;
   justify-content: space-between;
 }
-#leftCurInp {
-  width: 239px;
+
+.CurInp {
+  width: 124px;
   font-family: Roboto;
   font-style: Bold;
   font-size: 36px;
@@ -268,26 +263,8 @@ img {
   line-height: 100%;
   margin-left: 16px;
 }
-#rightCurInp {
-  width: 239px;
-  font-family: Roboto;
-  font-style: Bold;
-  font-size: 36px;
-  line-height: 42px;
-  line-height: 100%;
-  margin-left: 16px;
-}
-.curency-Left {
-  margin-top: 35px;
-  color: #c6c6c6;
-  font-family: Roboto;
-  font-style: Regular;
-  font-size: 12px;
-  line-height: 14px;
-  line-height: 100%;
-  margin-left: 16px;
-}
-.curency-Right {
+
+.curency-Div {
   margin-top: 35px;
   color: #c6c6c6;
   font-family: Roboto;

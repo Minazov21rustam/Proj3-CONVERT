@@ -10,12 +10,10 @@ export default class Controller {
       this.model.setLeftValue(e.target.value);
       this.setRightInp();
     };
-
     this.view.rightInp.onkeyup = (e) => {
       this.model.setRightValue(e.target.value);
       this.setLeftInp();
     };
-
     this.init();
   }
 
@@ -25,11 +23,9 @@ export default class Controller {
 
   setRightInp() {
     this.view.rightInp.value = this.model.leftValue * this.model.coefficient;
-  //   console.log(this.view.rightInp.value, this.model.leftValue, this.model.coefficient);
   }
   setLeftInp() {
     this.view.leftInp.value = this.model.rightValue * this.model.coefficient;
-    // console.log(this.view.leftInp.value, this.model.rightValue, this.model.coefficient);
   }
 
   onLeftCurrencyChange = async (currency) => {
@@ -59,7 +55,7 @@ export default class Controller {
     const data = await response.json();
     return data;
   };
-  
+
   getAndSetCurrency = async () => {
     const data = await this.fetchCurency(
       this.model.leftCurrency,
@@ -69,12 +65,16 @@ export default class Controller {
   };
 
   writeLeftCurency() {
-    const curLeftDiv = document.querySelector(".curency-Left");
-    curLeftDiv.innerText = `1 ${this.model.leftCurrency} = ${(this.model.coefficient).toFixed(3)} ${this.model.rightCurrency}`;
+    const curLeftDiv = document.querySelector("#curency-Left");
+    curLeftDiv.innerText = `1 ${
+      this.model.leftCurrency
+    } = ${this.model.coefficient.toFixed(3)} ${this.model.rightCurrency}`;
   }
 
   writeRightCurency() {
-    const curRightDiv = document.querySelector(".curency-Right");
-    curRightDiv.innerText = `1 ${this.model.rightCurrency} = ${(1/this.model.coefficient).toFixed(3)} ${this.model.leftCurrency}`;
+    const curRightDiv = document.querySelector("#curency-Right");
+    curRightDiv.innerText = `1 ${this.model.rightCurrency} = ${(
+      1 / this.model.coefficient
+    ).toFixed(3)} ${this.model.leftCurrency}`;
   }
 }
