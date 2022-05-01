@@ -22,10 +22,14 @@ export default class Controller {
   }
 
   setRightInp() {
-    this.view.rightInp.value = this.model.leftValue * this.model.coefficient;
+    const toNumber = this.model.leftValue * this.model.coefficient;
+    this.view.rightInp.value = toNumber.toFixed(3);
+    this.model.rightValue = toNumber.toFixed(3);
   }
   setLeftInp() {
-    this.view.leftInp.value = this.model.rightValue * this.model.coefficient;
+    const fromNumber = this.model.leftValue * this.model.coefficient;
+    this.view.leftInp.value = fromNumber.toFixed(3);
+    this.model.leftValue = fromNumber.toFixed(3);
   }
 
   onLeftCurrencyChange = async (currency) => {

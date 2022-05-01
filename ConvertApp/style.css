@@ -231,12 +231,14 @@ img {
 
 .money-text input {
   height: 38px;
-  width: 124px;
+  width: 224px;
   font-weight: 700;
   font-size: 36px;
   text-align: left;
   border: none;
   outline: none;
+  margin-left: 16px;
+  margin-top: 5px;
 }
 
 .left-side {
