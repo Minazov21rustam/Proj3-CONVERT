@@ -19,6 +19,7 @@ export default class Controller {
 
   init() {
     this.getAndSetCurrency();
+    // this.getAndSetCurrency1()
   }
 
   setRightInp() {
@@ -27,7 +28,7 @@ export default class Controller {
     this.model.rightValue = toNumber.toFixed(3);
   }
   setLeftInp() {
-    const fromNumber = this.model.leftValue * this.model.coefficient;
+    const fromNumber = this.model.rightValue * this.model.coefficient;
     this.view.leftInp.value = fromNumber.toFixed(3);
     this.model.leftValue = fromNumber.toFixed(3);
   }
@@ -35,8 +36,9 @@ export default class Controller {
   onLeftCurrencyChange = async (currency) => {
     this.model.setLeftCurrency(currency);
     await this.getAndSetCurrency();
-    this.setRightInp();
+
     this.setLeftInp();
+    this.setRightInp();
 
     this.writeRightCurency();
     this.writeLeftCurency();
@@ -45,11 +47,12 @@ export default class Controller {
   onRigthCurrencyChange = async (currency) => {
     this.model.setRightCurrency(currency);
     await this.getAndSetCurrency();
+
+    this.setLeftInp();
+    this.setRightInp();
+
     this.writeRightCurency();
     this.writeLeftCurency();
-
-    this.setRightInp();
-    this.setLeftInp();
   };
 
   fetchCurency = async (base, symbols) => {
@@ -67,6 +70,13 @@ export default class Controller {
     );
     this.model.setCoefficent(data.rates[this.model.rightCurrency]);
   };
+  // getAndSetCurrency1 = async () => {
+  //   const data = await this.fetchCurency(
+  //     this.model.rightCurrency,
+  //     this.model.leftCurrency
+  //   );
+  //   this.model.setCoefficent(data.rates[this.model.leftCurrency]);
+  // };
 
   writeLeftCurency() {
     const curLeftDiv = document.querySelector("#curency-Left");
