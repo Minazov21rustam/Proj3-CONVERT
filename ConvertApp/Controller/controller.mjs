@@ -10,7 +10,7 @@ export default class Controller {
       this.model.setLeftValue(e.target.value);
       this.setRightInp();
     };
-    
+
     this.view.rightInp.onkeyup = (e) => {
       this.model.setRightValue(e.target.value);
       this.setLeftInp();
@@ -22,6 +22,7 @@ export default class Controller {
     this.getAndSetCurrency();
     this.writeRightCurency();
     this.writeLeftCurency();
+    this.addListeners();
   }
 
   setRightInp() {
@@ -83,5 +84,37 @@ export default class Controller {
     curRightDiv.innerText = `1 ${this.model.rightCurrency} = ${(
       1 / this.model.coefficient
     ).toFixed(3)} ${this.model.leftCurrency}`;
+  }
+  addListeners() {
+    this.view.radio1.addEventListener("click", () => {
+      this.onLeftCurrencyChange("RUB");
+    });
+
+    this.view.radio2.addEventListener("click", () => {
+      this.onLeftCurrencyChange("USD");
+    });
+
+    this.view.radio3.addEventListener("click", () => {
+      this.onLeftCurrencyChange("EUR");
+    });
+
+    this.view.radio4.addEventListener("click", () => {
+      this.onLeftCurrencyChange("GBP");
+    });
+    this.view.radio5.addEventListener("click", () => {
+      this.onRigthCurrencyChange("RUB");
+    });
+
+    this.view.radio6.addEventListener("click", () => {
+      this.onRigthCurrencyChange("USD");
+    });
+
+    this.view.radio7.addEventListener("click", () => {
+      this.onRigthCurrencyChange("EUR");
+    });
+
+    this.view.radio8.addEventListener("click", () => {
+      this.onRigthCurrencyChange("GBP");
+    });
   }
 }
