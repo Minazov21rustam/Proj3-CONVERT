@@ -9,23 +9,6 @@ export default class View {
   }
   
   init() {
-    // const leftBtn = document.querySelectorAll(".left-Btn");
-    // const rightBtn = document.querySelectorAll(".right-Btn");
-
-    // leftBtn.forEach((el) =>
-    //   el.addEventListener("click", () => {
-    //     this.model.currencyArr.forEach(element => {
-    //       this.onLeftCurrencyChange(element);
-    //     });
-    //   })
-    // );
-    // rightBtn.forEach((el) =>
-    //   el.addEventListener("click", () => {
-    //     this.model.currencyArr.forEach(element => {
-    //       thisonRightCurrencyChange(element);
-    //     });
-    //   })
-    // );
     const radio1 = document.querySelector("#radio-1");
     radio1.addEventListener("click", () => {
       this.onLeftCurrencyChange("RUB");

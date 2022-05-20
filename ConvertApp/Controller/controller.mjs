@@ -10,6 +10,7 @@ export default class Controller {
       this.model.setLeftValue(e.target.value);
       this.setRightInp();
     };
+    
     this.view.rightInp.onkeyup = (e) => {
       this.model.setRightValue(e.target.value);
       this.setLeftInp();
@@ -19,7 +20,8 @@ export default class Controller {
 
   init() {
     this.getAndSetCurrency();
-    // this.getAndSetCurrency1()
+    this.writeRightCurency();
+    this.writeLeftCurency();
   }
 
   setRightInp() {
@@ -37,7 +39,6 @@ export default class Controller {
     this.model.setLeftCurrency(currency);
     await this.getAndSetCurrency();
 
-    this.setLeftInp();
     this.setRightInp();
 
     this.writeRightCurency();
@@ -48,7 +49,6 @@ export default class Controller {
     this.model.setRightCurrency(currency);
     await this.getAndSetCurrency();
 
-    this.setLeftInp();
     this.setRightInp();
 
     this.writeRightCurency();
@@ -70,13 +70,6 @@ export default class Controller {
     );
     this.model.setCoefficent(data.rates[this.model.rightCurrency]);
   };
-  // getAndSetCurrency1 = async () => {
-  //   const data = await this.fetchCurency(
-  //     this.model.rightCurrency,
-  //     this.model.leftCurrency
-  //   );
-  //   this.model.setCoefficent(data.rates[this.model.leftCurrency]);
-  // };
 
   writeLeftCurency() {
     const curLeftDiv = document.querySelector("#curency-Left");

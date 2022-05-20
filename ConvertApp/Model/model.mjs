@@ -5,7 +5,6 @@ export default class Model {
     this.coefficient = 1;
     this.leftValue = 1;
     this.rightValue = 1;
-    this.currencyArr = ['RUB','USD','EUR','GBP']
   }
 
   setRightCurrency = (currency) => {
