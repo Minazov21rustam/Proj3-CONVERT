@@ -85,36 +85,17 @@ export default class Controller {
       1 / this.model.coefficient
     ).toFixed(3)} ${this.model.leftCurrency}`;
   }
+
   addListeners() {
-    this.view.radio1.addEventListener("click", () => {
-      this.onLeftCurrencyChange("RUB");
+    this.view.leftButtons.forEach((element) => {
+      element.addEventListener("click", (e) => {
+        this.onLeftCurrencyChange(e.target.value);
+      });
     });
-
-    this.view.radio2.addEventListener("click", () => {
-      this.onLeftCurrencyChange("USD");
-    });
-
-    this.view.radio3.addEventListener("click", () => {
-      this.onLeftCurrencyChange("EUR");
-    });
-
-    this.view.radio4.addEventListener("click", () => {
-      this.onLeftCurrencyChange("GBP");
-    });
-    this.view.radio5.addEventListener("click", () => {
-      this.onRigthCurrencyChange("RUB");
-    });
-
-    this.view.radio6.addEventListener("click", () => {
-      this.onRigthCurrencyChange("USD");
-    });
-
-    this.view.radio7.addEventListener("click", () => {
-      this.onRigthCurrencyChange("EUR");
-    });
-
-    this.view.radio8.addEventListener("click", () => {
-      this.onRigthCurrencyChange("GBP");
+    this.view.rightButtons.forEach((element) => {
+      element.addEventListener("click", (e) => {
+        this.onRigthCurrencyChange(e.target.value);
+      });
     });
   }
 }
